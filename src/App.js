@@ -19,7 +19,7 @@ import {
     onAuthStateChanged
 } from 'firebase/auth';
 
-const players = ['Yash Rathore', 'Maldini', 'Hoo Lee Sheet', 'Scarlett', 'Starky'];
+const players = ['Yash Rathore', 'Maldini', 'Hoo Lee Sheet', 'Scarlett', 'Starky', 'Amon'];
 const ADMIN_UID = '5FNYwYZpNZWXKSXBAuZ9OeMuk2w2'; // Replace this with your actual UID
 
 function App() {
