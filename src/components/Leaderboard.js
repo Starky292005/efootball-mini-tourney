@@ -3,7 +3,7 @@ const Leaderboard = ({ players, matches }) => {
 
     // Initialize stats for each player
     players.forEach(p => {
-        stats[p] = { played: 0, won: 0, lost: 0, draw: 0 gf: 0, ga: 0, gd: 0, points: 0 };
+        stats[p] = { played: 0, won: 0, lost: 0, draw: 0, gf: 0, ga: 0, gd: 0, points: 0 };
     });
 
     // Calculate stats from matches
@@ -53,7 +53,7 @@ const Leaderboard = ({ players, matches }) => {
             <h2>Leaderboard</h2>
             <table>
                 <thead>
-                <th>
+                <tr>
                     <th>Player</th>
                     <th>Played</th>
                     <th>Won</th>
