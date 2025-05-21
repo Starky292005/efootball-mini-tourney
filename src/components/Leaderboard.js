@@ -3,7 +3,7 @@ const Leaderboard = ({ players, matches }) => {
 
     // Initialize stats for each player
     players.forEach(p => {
-        stats[p] = { played: 0, won: 0, lost: 0, gf: 0, ga: 0, gd: 0, points: 0 };
+        stats[p] = { played: 0, won: 0, lost: 0, draw: 0 gf: 0, ga: 0, gd: 0, points: 0 };
     });
 
     // Calculate stats from matches
@@ -27,11 +27,13 @@ const Leaderboard = ({ players, matches }) => {
             player1Stats.lost++;
             player2Stats.points += 3;
         }
-        // Optionally add draw handling if you want:
-        // else {
-        //     player1Stats.points += 1;
-        //     player2Stats.points += 1;
-        // }
+        //  draw handling
+        else {
+            player1Stats.draw++;
+            player2Stats.draw++;
+            player1Stats.points += 1;
+            player2Stats.points += 1;
+         }
     });
 
     // Calculate goal difference for each player
@@ -51,11 +53,12 @@ const Leaderboard = ({ players, matches }) => {
             <h2>Leaderboard</h2>
             <table>
                 <thead>
-                <tr>
+                <th>
                     <th>Player</th>
                     <th>Played</th>
                     <th>Won</th>
                     <th>Lost</th>
+                    <th>Draw</th>
                     <th>GF</th>
                     <th>GA</th>
                     <th>GD</th>
@@ -69,6 +72,7 @@ const Leaderboard = ({ players, matches }) => {
                         <td>{stats[p].played}</td>
                         <td>{stats[p].won}</td>
                         <td>{stats[p].lost}</td>
+                        <td>{stats[p].draw}</td>
                         <td>{stats[p].gf}</td>
                         <td>{stats[p].ga}</td>
                         <td>{stats[p].gd}</td>
